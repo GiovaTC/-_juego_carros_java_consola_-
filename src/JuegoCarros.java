@@ -87,9 +87,22 @@ public class JuegoCarros {
                 }
 
                 //obstaculo .
+                else if (x == obstaculoX && y == obstaculoY) {
+                    System.out.print("X");
+                }
+
+                // carro jugador .
+                else if (x == carroX && y == ALTO - 1) {
+                    System.out.print("A");
+                }
+
+                else {
+                    System.out.print(" ");
+                }
             }
+
+            System.out.println();
         }
-        
     }
 
     private static void generarObstaculo() {
