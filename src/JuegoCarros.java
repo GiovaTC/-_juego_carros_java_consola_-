@@ -77,6 +77,18 @@ public class JuegoCarros {
     }
 
     static void dibujar() {
+        for ( int y = 0; y < ALTO; y++ ) {
+
+            for ( int x = 0; x < ANCHO; x++ ) {
+
+                // bordes
+                if (x == 0 || x == ANCHO - 1){
+                    System.out.print("|");
+                }
+
+                //obstaculo .
+            }
+        }
         
     }
 
