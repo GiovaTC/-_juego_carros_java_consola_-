@@ -30,7 +30,7 @@ public class JuegoCarros {
             System.out.println("\nPUNTAJE: " + puntaje);
             System.out.println("Controles: A=Izquierda D=Derecha Q=Salir");
 
-            // entrada del jugador
+            // Entrada del jugador
             if (System.in.available() > 0) {
 
                 String input = scanner.nextLine().toUpperCase();
@@ -54,6 +54,7 @@ public class JuegoCarros {
             }
 
             moverObstaculo();
+
             verificarColision();
 
             Thread.sleep(200);
@@ -66,21 +67,22 @@ public class JuegoCarros {
     }
 
     static void dibujar() {
-        for ( int y = 0; y < ALTO; y++ ) {
 
-            for ( int x = 0; x < ANCHO; x++ ) {
+        for (int y = 0; y < ALTO; y++) {
 
-                // bordes
-                if (x == 0 || x == ANCHO - 1){
+            for (int x = 0; x < ANCHO; x++) {
+
+                // Bordes
+                if (x == 0 || x == ANCHO - 1) {
                     System.out.print("|");
                 }
 
-                //obstaculo .
+                // Obstáculo
                 else if (x == obstaculoX && y == obstaculoY) {
                     System.out.print("X");
                 }
 
-                // carro jugador .
+                // Carro jugador
                 else if (x == carroX && y == ALTO - 1) {
                     System.out.print("A");
                 }
@@ -93,6 +95,7 @@ public class JuegoCarros {
             System.out.println();
         }
     }
+
     static void moverObstaculo() {
 
         obstaculoY++;
@@ -126,4 +129,4 @@ public class JuegoCarros {
             System.out.println();
         }
     }
-}   
+}
