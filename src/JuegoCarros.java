@@ -65,17 +65,6 @@ public class JuegoCarros {
         System.out.println("================================");
     }
 
-    private static void limpiarPantalla() {
-    }
-
-    private static void verificarColision() {
-        
-    }
-
-    private static void moverObstaculo() {
-        
-    }
-
     static void dibujar() {
         for ( int y = 0; y < ALTO; y++ ) {
 
@@ -104,7 +93,37 @@ public class JuegoCarros {
             System.out.println();
         }
     }
+    static void moverObstaculo() {
 
-    private static void generarObstaculo() {
+        obstaculoY++;
+
+        if (obstaculoY >= ALTO) {
+
+            puntaje++;
+
+            obstaculoY = 0;
+
+            generarObstaculo();
+        }
     }
-}
+
+    static void generarObstaculo() {
+
+        obstaculoX = random.nextInt(ANCHO - 2) + 1;
+    }
+
+    static void verificarColision() {
+
+        if (obstaculoY == ALTO - 1 && obstaculoX == carroX) {
+
+            juegoActivo = false;
+        }
+    }
+
+    static void limpiarPantalla() {
+
+        for (int i = 0; i < 30; i++) {
+            System.out.println();
+        }
+    }
+}   
